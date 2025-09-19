@@ -1,0 +1,234 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  display: flex;
+  height: calc(100vh - 60px);
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+.watchlist-container {
+  width: 300px;
+  height: 100%;
+  border-right: 1px solid #e0e0e0;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.search-container {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+}
+
+.search {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.counts {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  font-size: 12px;
+  color: #666;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  position: relative;
+}
+
+.list li:hover {
+  background-color: #f5f5f5;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.item p.Down {
+  color: #ff5722;
+}
+
+.item p.up {
+  color: #4caf50;
+}
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+}
+
+.percent {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.down {
+  color: #ff5722;
+}
+
+.up {
+  color: #4caf50;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.actions button {
+  padding: 3px 8px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.buy {
+  background-color: #4caf50;
+  color: white;
+}
+
+.sell {
+  background-color: #ff5722;
+  color: white;
+}
+
+.chart, .btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* TopBar.css */
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.indices-container {
+  display: flex;
+}
+
+.nifty, .sensex {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.index {
+  font-weight: 500;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.index-points {
+  margin: 0;
+  margin-right: 5px;
+}
+
+.percent {
+  margin: 0;
+}
+
+/* Menu.css */
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.menus {
+  display: flex;
+  align-items: center;
+}
+
+.menus ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menus li {
+  margin: 0 15px;
+}
+
+.menu {
+  margin: 0;
+  cursor: pointer;
+  color: #666;
+}
+
+.selected {
+  color: #ff5722;
+  font-weight: 500;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.avtar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ff5722;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.username {
+  margin: 0;
+  font-size: 14px;
+}
+
+hr {
+  height: 30px;
+  margin: 0 10px;
+  border: none;
+  border-left: 1px solid #e0e0e0;
+}
