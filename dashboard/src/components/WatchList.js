@@ -1,8 +1,9 @@
-import React ,{useState} from "react";
+import React ,{useState,useContext} from "react";
 import {Tooltip,Grow} from "@mui/material"; // tooltip for hover
 import { watchlist } from "../data/data";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp"
+import GeneralContext from "./GeneralContext";
 const WatchList=()=>{
    return(
     <div className="watchlist-container">
@@ -56,8 +57,16 @@ const WatchlistItem = ({stock})=>{
     </li>
   )
 }
-const WatchListActions = ({uid}) =>{// uid means uniqu id for each item for data -- kis unique id pr hme hover ko show krna h so we use uid
-return(
+// uid means uniqu id for each item for data -- kis unique id pr hme hover ko show krna h so we use uid
+const WatchListActions = ({ uid }) => {
+  // ✅ USE the context here!
+  const { openBuyWindow } = useContext(GeneralContext);
+
+  const handleBuyClick = () => {
+    openBuyWindow(uid); // ✅ This opens the buy window!
+  };
+
+  return(
   <span className="actions">
     <span>
       <Tooltip 
@@ -65,7 +74,7 @@ return(
       placement="top"
       arrow 
       TransitionComponent={Grow}>
-        <button className="buy"> Buy</button>
+        <button className="buy" onClick={handleBuyClick}> Buy</button>
       </Tooltip>
        <Tooltip 
       title="Sell (S)"

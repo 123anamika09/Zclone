@@ -1,12 +1,31 @@
-import React from "react";
+import React,{useState,useEffect}from "react";
+//  useState to store that data
+//  useEffect to connect to that api that comes from backend
 
-import { holdings } from "../data/data";
+//  now we have to fetch data from backend by using these 2 hooks - useState and useEffect
+
+
+import axios from "axios";  // axios is a package which helps to connect with api
+import "./Holdings.css"; 
+// import { holdings } from "../data/data";   // dummy data not come from backend
 const Holdings = () => {
+
+  const [allHoldings,setAllholdings] = useState([]); //initial size is 0 
+
+  useEffect(()=>{ // 1 hi baar call ho baar baar use na ho 
+   axios.get("http://localhost:3002/allHoldings").then((res)=>{
+    console.log(res.data);//just to see if data is coming or not 
+    setAllholdings(res.data);
+   })
+  
+  },[])
     return(
       <>
-      <h3 className="title">Holdings ({holdings.length})</h3>
+      <h3 className="title">Holdings ({allHoldings.length})</h3>
       <div className="order-table">
-        <table>
+        <table className="holdings-table">
+          <thead>
+
           <tr>
             <th>Instrument</th>
             <th>Qty.</th>
@@ -18,8 +37,10 @@ const Holdings = () => {
             <th>Day Chg </th>
             
           </tr>
+           </thead>
+           <tbody>
           {/* dynamic data .... data read line by line  */}
-          {holdings.map((stock,index)=>{
+          {allHoldings.map((stock,index)=>{
             const currValue = stock.price * stock.qty;
             const isProfit = currValue- stock.avg * stock.qty>=0.0;
             const profClass = isProfit?"Profit":"loss";
@@ -40,6 +61,7 @@ const Holdings = () => {
           </tr>
             );
           })}
+          </tbody>
         </table>
       </div>
 

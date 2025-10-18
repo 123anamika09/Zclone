@@ -18,9 +18,9 @@ root.render(
       <Route path="/" element={<Home/>} />
       <Route path="/orders" element={<Home/>} />
       <Route path="/holdings" element={<Home/>} />
-      <Route path="/positions" element={<Home/>} />
-      <Route path="/funds" element={<Home/>} />
-      <Route path="/apps" element={<Home/>} />
+      <Route path="/positions" element={<Positions/>} />
+      <Route path="/funds" element={<Funds/>} />
+      <Route path="/apps" element={<Apps/>} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
